@@ -9,6 +9,5 @@ export default defineConfig({
     nodePolyfills({
       include: ['buffer']
     })
-  ],
-  base: '/burnlab'
+  ]
 })
