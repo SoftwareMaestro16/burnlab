@@ -107,7 +107,7 @@ function App() {
 
     return (
         <>
-            {!isTg ? (
+            {isTg ? (
                 <div style={{
                     display: 'flex',
                     justifyContent: 'center',
@@ -122,7 +122,7 @@ function App() {
                 </div>
             ) : (
                 <TonConnectUIProvider
-                    manifestUrl="https://softwaremaestro16.github.io/burnlab/tonconnect-manifest.json"
+                    manifestUrl="https://burnlab.vercel.app/tonconnect-manifest.json"
                     uiPreferences={{
                         borderRadius: 'm',
                         colorsSet: {

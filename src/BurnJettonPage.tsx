@@ -171,7 +171,7 @@ const BurnJettonPage: React.FC = () => {
                 <h1 className='main-h1'>Burn Jetton</h1>
             </div>
             <div className="token-image-container-2">
-                <img src={selectedTokenImage} alt="Selected Token" className="token-image-2" />
+                <img src={selectedTokenImage} alt="Selected Token" className="token-image-22" />
             </div>
             <div className="input-container">
                 <label htmlFor="token-symbol"></label>

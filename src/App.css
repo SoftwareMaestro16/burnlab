@@ -132,15 +132,28 @@ button:focus {
 
 .example-image {
   border-radius: 15px;
-  width: 65vw;
+  width: 61vw;
   max-width: 600px;
   height: auto;
   position: fixed;
-  bottom: 30%;
+  bottom: 28%;
   left: 50%;
   transform: translateX(-50%);
   animation: pressInOut 4s ease-in-out infinite;
 }
+
+.token-image-22 {
+  border-radius: 15px;
+  width: 53vw;
+  max-width: 600px;
+  height: auto;
+  position: fixed;
+  bottom: 23%; /* Adjusted from 38% to 23% to move it down by 15% */
+  left: 50%;
+  top: 8%;
+  transform: translateX(-50%);
+}
+
 
 @media (max-width: 400px) and (max-height: 700px) {
   .example-image {
