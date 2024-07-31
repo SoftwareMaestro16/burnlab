@@ -2,8 +2,8 @@ import {useEffect, useState} from "react";
 import {Locales, THEME, useTonConnectUI} from "@tonconnect/ui-react";
 
 export const Settings = () => {
-    const [lang, setLang] = useState('en');
-    const [theme, setTheme] = useState(THEME.LIGHT);
+    const [lang] = useState('en');
+    const [theme] = useState(THEME.LIGHT);
     const [_, setOptions] = useTonConnectUI();
 
     useEffect(() => {

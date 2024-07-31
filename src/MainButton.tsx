@@ -1,7 +1,6 @@
 // MainButton.tsx
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect } from "react";
 import { WebApp } from "./sdk";
-import { useNavigate } from 'react-router-dom';
 
 interface MainButtonProps {
   disabled?: boolean;

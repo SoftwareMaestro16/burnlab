@@ -5,7 +5,7 @@ import './BurnSbtPage.css';
 import { BackButton } from './BackButton';
 import { useTonConnectUI, CHAIN, toUserFriendlyAddress } from "@tonconnect/ui-react";
 import { MainButton } from './MainButton';
-import { Address, beginCell } from "@ton/core";
+import { beginCell } from "@ton/core";
 import { SendTransactionRequest } from "@tonconnect/ui-react";
 
 const CACHE_TIMEOUT = 3 * 60 * 1000; // 3 minutes in milliseconds
@@ -17,7 +17,7 @@ const BurnSbtPage: React.FC = () => {
     const [selectedNftName, setSelectedNftName] = useState('');
     const [selectedNftAddress, setSelectedNftAddress] = useState('');
     const [addressDisplay, setAddressDisplay] = useState('');
-    const [copied, setCopied] = useState(false);
+    const [, setCopied] = useState(false);
     const assetsContainerRef = useRef<HTMLDivElement>(null);
     const [tonConnectUI] = useTonConnectUI();
     const [loading, setLoading] = useState(false);

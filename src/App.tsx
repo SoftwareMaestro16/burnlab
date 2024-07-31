@@ -1,7 +1,7 @@
 import { useEffect, useState, FC } from 'react';
 import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
 import WebAppSDK from '@twa-dev/sdk';
-import { THEME, TonConnectUIProvider, useIsConnectionRestored, useTonConnectModal, useTonConnectUI, useTonWallet } from "@tonconnect/ui-react";
+import { THEME, TonConnectUIProvider, useTonConnectModal } from "@tonconnect/ui-react";
 import { Header } from "./Header.tsx";
 import { SendTx } from "./SendTx.tsx";
 import { Settings } from "./Settings.tsx";
@@ -20,13 +20,9 @@ declare global {
 const Home: FC<{ setWalletAddress: (address: string | null) => void }> = ({ setWalletAddress }) => {
     const [walletAddress, setWalletAddressLocal] = useState<string | null>(null);
     const [friendlyAddress, setFriendlyAddress] = useState<string | null>(null);
-    const [amount, setAmount] = useState<number>(0); 
-    const [selectedTokenAddress, setSelectedTokenAddress] = useState<string>(''); 
-    const wallet = useTonWallet();
-    const isRestored = useIsConnectionRestored();
+    const [amount] = useState<number>(0); 
+    const [selectedTokenAddress] = useState<string>(''); 
     const { open } = useTonConnectModal();
-    const [tonConnectUi] = useTonConnectUI();
-
     useEffect(() => {
         if (walletAddress) {
             const friendly = walletAddress; 

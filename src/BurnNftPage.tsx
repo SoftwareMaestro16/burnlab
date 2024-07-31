@@ -17,7 +17,7 @@ const BurnNftPage: React.FC = () => {
     const [selectedNftName, setSelectedNftName] = useState('');
     const [selectedNftAddress, setSelectedNftAddress] = useState('');
     const [addressDisplay, setAddressDisplay] = useState('');
-    const [copied, setCopied] = useState(false);
+    const [, setCopied] = useState(false);
     const assetsContainerRef = useRef<HTMLDivElement>(null);
     const [tonConnectUI] = useTonConnectUI();
     const [loading, setLoading] = useState(false);

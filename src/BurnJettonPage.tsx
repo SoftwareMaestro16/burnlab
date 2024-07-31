@@ -18,7 +18,7 @@ const BurnJettonPage: React.FC = () => {
     const [selectedTokenAddress, setSelectedTokenAddress] = useState('');
     const [addressDisplay, setAddressDisplay] = useState('');
     const [amount, setAmount] = useState<number>(0);
-    const [copied, setCopied] = useState(false);
+    const [, setCopied] = useState(false);
     const assetsContainerRef = useRef<HTMLDivElement>(null);
     const [tonConnectUI] = useTonConnectUI();
     const [selectedTokenDecimals, setSelectedTokenDecimals] = useState(0);
