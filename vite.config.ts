@@ -10,4 +10,5 @@ export default defineConfig({
       include: ['buffer']
     })
   ],
+  base: '/hangman-game'
 })
