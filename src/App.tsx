@@ -110,47 +110,64 @@ function App() {
     }, []);
 
     return (
-        <TonConnectUIProvider
-            manifestUrl="https://ton-connect.github.io/demo-dapp-with-react-ui/tonconnect-manifest.json"
-            uiPreferences={{
-                borderRadius: 'm',
-                colorsSet: {
-                    [THEME.LIGHT]: {
-                        connectButton: {
-                            background: '#e88335'
-                        },
-                        accent: '#e88335',
-                        telegramButton: '#ed7e2f',
-                        background: {
-                            qr: '#fabf73',
-                            tint: '#e88335',
-                            primary: '#f2b15c',
-                            secondary: '#e16ae6',
-                            segment: '#e88335'
-                        },
-                        text: {
-                            primary: '#000000',
-                            secondary: '#000000'
-                        },
-                        
-                    }
-                }
-            }}
-            actionsConfiguration={{
-                modals: 'all',
-                notifications: ['error'],
-                twaReturnUrl: 'https://t.me/BurnLabBot/Burn' 
-            }}
-        >
-            <Router>
-            <Routes>
-                    <Route path="/" element={<Home setWalletAddress={() => {}} />} />
-                    <Route path="/burn-jetton/:friendlyAddress" element={<BurnJettonPage />} />
-                    <Route path="/burn-nft/:friendlyAddress" element={<BurnNftPage />} />
-                    <Route path="/burn-sbt/:friendlyAddress" element={<BurnSbtPage />} /> {/* Added route */}
-                </Routes>
-            </Router>
-        </TonConnectUIProvider>
+        <>
+            {!isTg ? (
+                <div style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    height: '100vh',
+                    backgroundColor: 'black',
+                    color: 'white',
+                    textAlign: 'center',
+                    fontSize: '24px',
+                }}>
+                    Access denied. Please open in Telegram.
+                </div>
+            ) : (
+                <TonConnectUIProvider
+                    manifestUrl="https://softwaremaestro16.github.io/burnlab/tonconnect-manifest.json"
+                    uiPreferences={{
+                        borderRadius: 'm',
+                        colorsSet: {
+                            [THEME.LIGHT]: {
+                                connectButton: {
+                                    background: '#e88335'
+                                },
+                                accent: '#e88335',
+                                telegramButton: '#ed7e2f',
+                                background: {
+                                    qr: '#fabf73',
+                                    tint: '#e88335',
+                                    primary: '#f2b15c',
+                                    secondary: '#e16ae6',
+                                    segment: '#e88335'
+                                },
+                                text: {
+                                    primary: '#000000',
+                                    secondary: '#000000'
+                                },
+                                
+                            }
+                        }
+                    }}
+                    actionsConfiguration={{
+                        modals: 'all',
+                        notifications: ['error'],
+                        twaReturnUrl: 'https://t.me/BurnLabBot/Burn' 
+                    }}
+                >
+                    <Router>
+                    <Routes>
+                            <Route path="/" element={<Home setWalletAddress={() => {}} />} />
+                            <Route path="/burn-jetton/:friendlyAddress" element={<BurnJettonPage />} />
+                            <Route path="/burn-nft/:friendlyAddress" element={<BurnNftPage />} />
+                            <Route path="/burn-sbt/:friendlyAddress" element={<BurnSbtPage />} /> {/* Added route */}
+                        </Routes>
+                    </Router>
+                </TonConnectUIProvider>
+            )}
+        </>
     );
 }
 
