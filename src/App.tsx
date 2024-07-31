@@ -107,7 +107,7 @@ function App() {
 
     return (
         <>
-            {isTg ? (
+            {!isTg ? (
                 <div style={{
                     display: 'flex',
                     justifyContent: 'center',
