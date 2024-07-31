@@ -1,0 +1,220 @@
+body {
+  background: linear-gradient(to right, 
+    #eb5d25, 
+    #e4cb89) !important;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+.TonConnectUIProvider {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.header {
+  margin-bottom: 1rem;
+}
+
+.sendTx {
+  margin-bottom: 1rem;
+}
+
+.settings {
+  margin-bottom: 1rem;
+}
+
+.nft-item-index {
+  text-align: center;
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(45deg, #e88335, #fabf73);
+  border: 2px solid white;
+  border-radius: 8px;
+  padding: 2px 16px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  max-width: 90%;
+  max-height: 10%;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@media (max-width: 600px) {
+  .header,
+  .sendTx,
+  .settings {
+    width: 90%;
+  }
+
+  .nft-item-index {
+    width: 100%;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .nft-item-index {
+    font-size: 20px;
+    padding: 0px 10px;
+  }
+}
+
+* {
+  outline: none;
+}
+
+button {
+  user-select: none;
+}
+
+button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 160vh;
+  gap: 1%;
+}
+
+.button-1,
+.button-2,
+.button-3 {
+  background: linear-gradient(45deg, #e88335, #fabf73);
+  border: 2px solid white;
+  color: white;
+  font-weight: bold;
+  font-size: 23px;
+  padding: 10px 0;
+  border-radius: 8px;
+  cursor: pointer;
+  outline: none;
+  transition: background 0.3s, transform 0.3s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 80%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 400px) and (max-height: 700px) {
+  .button-container {
+    position: relative;
+  }
+
+  .button-1, .button-2, .button-3 {
+    transform: translateY(-85%);
+    top: 30%;
+  }
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.example-image {
+  border-radius: 15px;
+  width: 65vw;
+  max-width: 600px;
+  height: auto;
+  position: fixed;
+  bottom: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: pressInOut 4s ease-in-out infinite;
+}
+
+@media (max-width: 400px) and (max-height: 700px) {
+  .example-image {
+    width: 35vw;
+    bottom: 35%;
+  }
+}
+
+@keyframes pressInOut {
+  0% {
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    transform: translateX(-50%) scale(0.95);
+  }
+  100% {
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+.main-hh1 {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+  top: 13%;
+  left: 50%;
+  font-size: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space: nowrap;
+  transform: translateX(-50%);
+}
+
+.main-h1 {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+  top: 13%;
+  left: 50%;
+  font-size: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space: nowrap;
+  transform: translateX(-50%);
+}
+
+.main-h2 {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+  top: 21%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 33px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+@media (max-width: 400px) and (max-height: 700px) {
+  .main-h2 {
+    bottom: 58%;
+  }
+
+  .main-hh1 {
+    bottom: 66%;
+  }
+}

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>SBT MINT</title>
+    <style>
+      /* Запрещаем горизонтальную и вертикальную прокрутку и масштабирование */
+      html, body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden; /* Запрещаем прокрутку */
+        height: 100%; /* Обеспечиваем, чтобы высота охватывала весь экран */
+        width: 100%; /* Обеспечиваем, чтобы ширина охватывала весь экран */
+        touch-action: none; /* Отключаем масштабирование и жесты на мобильных устройствах */
+      }
+
+     
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+button, a {
+    outline: none; 
+    box-shadow: none; 
+}
+
+button:focus, a:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+button:active, a:active {
+    outline: none;
+    box-shadow: none;
+}
+
+button, a {
+    outline: none !important;
+    box-shadow: none !important;
+}
