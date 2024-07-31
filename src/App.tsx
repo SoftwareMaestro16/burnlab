@@ -154,11 +154,11 @@ function App() {
                     }}
                 >
                     <Router>
-                    <Routes>
+                        <Routes>
                             <Route path="/" element={<Home setWalletAddress={() => {}} />} />
                             <Route path="/burn-jetton/:friendlyAddress" element={<BurnJettonPage />} />
                             <Route path="/burn-nft/:friendlyAddress" element={<BurnNftPage />} />
-                            <Route path="/burn-sbt/:friendlyAddress" element={<BurnSbtPage />} /> {/* Added route */}
+                            <Route path="/burn-sbt/:friendlyAddress" element={<BurnSbtPage />} />
                         </Routes>
                     </Router>
                 </TonConnectUIProvider>
