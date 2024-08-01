@@ -104,7 +104,7 @@ function App() {
             document.body.style.setProperty('background-color', 'var(--tg-theme-bg-color)', 'important');
         }
     }, []);
-
+    // !
     return (
         <>
             {!isTg ? (

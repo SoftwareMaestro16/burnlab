@@ -29,24 +29,12 @@ const BurnNftPage: React.FC = () => {
             const fetchNFTs = async () => {
                 const currentTime = Date.now();
                 const cacheKeyRegular = `nfts-${friendlyAddress}`;
-                const cacheKeySBT = `sbt-${friendlyAddress}`;
-                const cachedDataRegular = localStorage.getItem(cacheKeyRegular);
-                const cachedDataSBT = localStorage.getItem(cacheKeySBT);
                 const cacheTimestampRegular = localStorage.getItem(`${cacheKeyRegular}-timestamp`);
-                const cacheTimestampSBT = localStorage.getItem(`${cacheKeySBT}-timestamp`);
+                const cachedDataRegular = localStorage.getItem(cacheKeyRegular);
 
                 if (cachedDataRegular && cacheTimestampRegular) {
                     const parsedData = JSON.parse(cachedDataRegular);
                     const cachedTimestamp = parseInt(cacheTimestampRegular, 10);
-                    if (currentTime - cachedTimestamp < CACHE_TIMEOUT) {
-                        setNfts(parsedData);
-                        return;
-                    }
-                }
-
-                if (cachedDataSBT && cacheTimestampSBT) {
-                    const parsedData = JSON.parse(cachedDataSBT);
-                    const cachedTimestamp = parseInt(cacheTimestampSBT, 10);
                     if (currentTime - cachedTimestamp < CACHE_TIMEOUT) {
                         setNfts(parsedData);
                         return;
@@ -60,21 +48,16 @@ const BurnNftPage: React.FC = () => {
                     console.timeEnd('LoadNFTs');
                     console.time('FilterNFTs');
                     const regularNfts = [];
-                    const sbts = [];
                     for (const nft of allNfts) {
                         const type = await getNFTType(nft.address);
                         if (type === 'NFT') {
                             regularNfts.push(nft);
-                        } else if (type === 'SBT') {
-                            sbts.push(nft);
                         }
                     }
                     console.timeEnd('FilterNFTs');
 
                     localStorage.setItem(cacheKeyRegular, JSON.stringify(regularNfts));
                     localStorage.setItem(`${cacheKeyRegular}-timestamp`, currentTime.toString());
-                    localStorage.setItem(cacheKeySBT, JSON.stringify(sbts));
-                    localStorage.setItem(`${cacheKeySBT}-timestamp`, currentTime.toString());
 
                     setNfts(regularNfts);
                 } catch (error) {
